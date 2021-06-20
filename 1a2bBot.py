@@ -1,10 +1,16 @@
 import random as rd
-import sys
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+import logging
 
 token = '1889030668:AAEI-EWca833U-x8yFI7PRZIODGbPPYP01E'
 FILE_NAME = 'answer.txt'
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 def myRandom() -> None:
     real = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
