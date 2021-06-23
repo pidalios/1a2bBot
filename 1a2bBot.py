@@ -3,7 +3,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 import logging
 
-token = '1889030668:AAEI-EWca833U-x8yFI7PRZIODGbPPYP01E'
+token = 'Your token'
 FILE_NAME = 'answer.txt'
 
 logging.basicConfig(level=logging.DEBUG,
