@@ -20,7 +20,7 @@ def myRandom() -> None:
     f = open(FILE_NAME, 'w')
     f.write('{:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
     f.close()
-    print('The answer is {:s}{:s}{:s}{:s}').format(real[0], real[1], real[2], real[3])
+    print('The answer is {:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
 
 def myGuess(update: Update, context: CallbackContext) -> None:
     counterA = 0
@@ -41,15 +41,15 @@ def myGuess(update: Update, context: CallbackContext) -> None:
     print(('{:s}{:s}{:s}{:s}   {:d}A{:d}B'.format(guess[0], guess[1], guess[2], guess[3], counterA, counterB)))
 
     if counterA==4:
-        update.message.reply_text('You win!')
+        update.message.reply_text('Congratulations! You win!')
         update.message.reply_text('Enter /start to start another game.')
         return
-
 
 def startGame(update: Update, context: CallbackContext) -> None:
     user = update.effective_user
     update.message.reply_markdown_v2(fr'Hi {user.mention_markdown_v2()}\!')
     update.message.reply_text('Let the game start!')
+    update.message.reply_text('Please enter 4 digits of numbers to begin.')
     myRandom()
 
 def main() -> None:
@@ -63,6 +63,3 @@ def main() -> None:
 
 if __name__=='__main__':
     main()
-
-
-
