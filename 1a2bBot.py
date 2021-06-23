@@ -20,6 +20,7 @@ def myRandom() -> None:
     f = open(FILE_NAME, 'w')
     f.write('{:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
     f.close()
+    print('The answer is {:s}{:s}{:s}{:s}').format(real[0], real[1], real[2], real[3])
 
 def myGuess(update: Update, context: CallbackContext) -> None:
     counterA = 0
@@ -37,6 +38,7 @@ def myGuess(update: Update, context: CallbackContext) -> None:
             if realNum[i]==guess[j] and i!=j:
                 counterB+=1
     update.message.reply_text('{:s}{:s}{:s}{:s}   {:d}A{:d}B'.format(guess[0], guess[1], guess[2], guess[3], counterA, counterB))
+    print(('{:s}{:s}{:s}{:s}   {:d}A{:d}B'.format(guess[0], guess[1], guess[2], guess[3], counterA, counterB)))
 
     if counterA==4:
         update.message.reply_text('You win!')

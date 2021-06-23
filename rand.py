@@ -35,7 +35,7 @@ def myGuess(guess) -> None:
         sys.exit(0)
         return
 
-def main():
+def main() -> None:
     myRandom()
     while True:
         guess = input('Guess number: ')
