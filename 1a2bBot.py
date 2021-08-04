@@ -8,7 +8,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 import logging
 
-token = 'Your token'
+token = 'token'
 FILE_NAME = 'answer.txt'
 
 logging.basicConfig(level=logging.DEBUG,
@@ -18,28 +18,26 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 def myRandom() -> None:
-    real = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    for i in range(0, 10):
+    real = list('0123456789')
+    for i in range(10):
         k = rd.randint(0, 9)
         real[i], real[k] = real[k], real[i]
-    f = open(FILE_NAME, 'w')
-    f.write('{:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
-    f.close()
+    with open(FILE_NAME, 'w') as f:
+        f.write('{:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
     print('The answer is {:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
 
 def myGuess(update: Update, context: CallbackContext) -> None:
     counterA = 0
     counterB = 0
-    f = open(FILE_NAME, 'r')
-    ans = f.read()
+    with open(FILE_NAME, 'r') as f:
+        ans = f.read()
     realNum = list(ans)
-    f.close()
-    
+
     guess = list(update.message.text)
-    for i in range(0, 4):
+    for i in range(4):
         if realNum[i]==guess[i]:
             counterA+=1
-        for j in range(0, 4):
+        for j in range(4):
             if realNum[i]==guess[j] and i!=j:
                 counterB+=1
     update.message.reply_text('{:s}{:s}{:s}{:s}   {:d}A{:d}B'.format(guess[0], guess[1], guess[2], guess[3], counterA, counterB))
