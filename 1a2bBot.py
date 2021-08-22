@@ -8,7 +8,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 import logging
 
-token = 'token'
+token = 'Your token'
 FILE_NAME = 'answer.txt'
 
 logging.basicConfig(level=logging.DEBUG,
