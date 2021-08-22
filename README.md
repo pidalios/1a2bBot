@@ -9,7 +9,7 @@ In 1a2bBot.py, simply change ``token`` variable from ``Your token`` to your bot 
 
 Install the requirements via pip: 
 
-``pip install -r requirement.txt``
+``pip install -r requirements.txt``
 
 ## References
 * [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot/ "Title")
