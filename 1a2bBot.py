@@ -17,7 +17,8 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-def myRandom() -> None:
+# Generate the answer
+def ansGenerate() -> None:
     real = list('0123456789')
     for i in range(10):
         k = rd.randint(0, 9)
@@ -26,6 +27,7 @@ def myRandom() -> None:
         f.write('{:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
     print('The answer is {:s}{:s}{:s}{:s}'.format(real[0], real[1], real[2], real[3]))
 
+# Guess the answer
 def myGuess(update: Update, context: CallbackContext) -> None:
     counterA = 0
     counterB = 0
@@ -48,17 +50,18 @@ def myGuess(update: Update, context: CallbackContext) -> None:
         update.message.reply_text('Enter /start to start another game.')
         return
 
-def startGame(update: Update, context: CallbackContext) -> None:
+# Initialize the game
+def gameInit(update: Update, context: CallbackContext) -> None:
     user = update.effective_user
-    update.message.reply_markdown_v2(fr'Hi {user.mention_markdown_v2()}\!')
-    update.message.reply_text('Let the game start!')
+    update.message.reply_markdown_v2(fr'Hello {user.mention_markdown_v2()}\!')
+    update.message.reply_text('Game Start!')
     update.message.reply_text('Please enter 4 digits of numbers to begin.')
-    myRandom()
+    ansGenerate()
 
 def main() -> None:
     updater = Updater(token)
     dispatcher = updater.dispatcher
-    dispatcher.add_handler(CommandHandler('start', startGame))
+    dispatcher.add_handler(CommandHandler('start', gameInit))
     dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, myGuess))
 
     updater.start_polling()

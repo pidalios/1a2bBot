@@ -1,18 +1,29 @@
-# 1a2bBot
-This is a simple example of telegram bot that plays a number guessing game named "1a2b". You can use this code to create a telegram bot in telegram.
+# 1A2B Telegram Bot
+This is a simple example of Telegram Bot that plays a number guessing game called "1A2B". You can use this code to create a Telegram Bot.
+
+<video controls width="200">
+    <source src='https://github.com/pidalios/1a2bBot/assets/38156969/0d5917aa-afc2-4a68-9561-3775def09ad8', type="video/mp4" />
+</video>
 
 ## Usage
-In `1a2bBot.py`, simply change `token` variable from `Your token` to your bot token. 
+Authorizing your bot to get a bot token (see [here](https://core.telegram.org/bots/api) for details).
+
+Start the bot server by the following steps:
+1. Modify `1a2bBot.py`, simply replace `token` variable with your bot token. 
+2. Use the command to start the bot server on your local device.
+    ```[bash]
+    python 1a2bBot.py
+    ```
+Enjoy your game on Telegram.
 
 ## Requirement
-> It works on python@3.9
-
-Install the requirements via pip: 
+Please install the requirements via pip: 
 
 ```
 pip install -r requirements.txt
 ```
 
 ## References
-* [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot/ "Title")
+1. Telegram Bot GitHub: https://github.com/python-telegram-bot/python-telegram-bot/
+2. Telegram Bot API: https://core.telegram.org/bots/api
 
