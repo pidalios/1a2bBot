@@ -2,7 +2,7 @@
 This is a simple example of Telegram Bot that plays a number guessing game called "1A2B". You can use this code to create a Telegram Bot.
 
 <video controls width="200">
-    <source src='https://github.com/pidalios/1a2bBot/assets/38156969/0d5917aa-afc2-4a68-9561-3775def09ad8', type="video/mp4" />
+    <source src='https://github.com/pidalios/1a2bBot/assets/38156969/c272e5c5-08d8-414b-b708-e34dd20a5b5e', type="video/webm" />
 </video>
 
 ## Usage
