@@ -1,9 +1,7 @@
 # 1A2B Telegram Bot
 This is a simple example of Telegram Bot that plays a number guessing game called "1A2B". You can use this code to create a Telegram Bot.
 
-<video controls width="200">
-    <source src='https://github.com/pidalios/1a2bBot/assets/38156969/c272e5c5-08d8-414b-b708-e34dd20a5b5e', type="video/webm" />
-</video>
+[1A2B Demo.webm](https://github.com/pidalios/1a2bBot/assets/38156969/2d45249c-c59c-408f-b1f7-1c34e6705113)
 
 ## Usage
 Authorizing your bot to get a bot token (see [here](https://core.telegram.org/bots/api) for details).
